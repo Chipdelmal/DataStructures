@@ -12,6 +12,9 @@ class LinkedList:
     def getHead(self):
         return self.__head
 
+    def __setHead(self, head):
+        self.__head = head
+
     def traverseList(self):
         tempNode = self.__head
         while tempNode.getNext() is not None:
@@ -25,10 +28,11 @@ class LinkedList:
             tempNode = tempNode.getNext()
             print(tempNode.getData())
 
-    def __addNode(self, newNode):
-        tail = self.traverseList()
-        tail.setNext(newNode)
-
     def addTail(self, value):
         tempNode = node.Node(value, None)
-        self.__addNode(tempNode)
+        tail = self.traverseList()
+        tail.setNext(tempNode)
+
+    def addHead(self, value):
+        tempNode = node.Node(value, self.__head)
+        self.__setHead(tempNode)

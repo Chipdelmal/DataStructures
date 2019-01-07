@@ -8,3 +8,6 @@ llist.printTraverseList()
 llist.addTail(30)
 llist.addTail(20)
 llist.printTraverseList()
+
+llist.addHead(100)
+llist.printTraverseList()
