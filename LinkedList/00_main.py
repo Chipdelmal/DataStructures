@@ -1,7 +1,6 @@
 import LinkedList as ll
-import Node as n
 
-head = n.Node(10, None)
+head = ll.Node(10, None)
 llist = ll.LinkedList(head)
 llist.addTail(20)
 llist.printTraverseList()
