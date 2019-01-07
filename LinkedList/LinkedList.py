@@ -7,28 +7,28 @@ import Node as node
 
 class LinkedList:
     def __init__(self, head=None):
-        self.head = head
+        self.__head = head
 
     def getHead(self):
-        return self.head
+        return self.__head
 
     def traverseList(self):
-        tempNode = self.head
+        tempNode = self.__head
         while tempNode.getNext() is not None:
             tempNode = tempNode.getNext()
         return tempNode
 
     def printTraverseList(self):
-        tempNode = self.head
+        tempNode = self.__head
         print(tempNode.getData())
         while tempNode.getNext() is not None:
             tempNode = tempNode.getNext()
             print(tempNode.getData())
 
-    def addNode(self, newNode):
+    def __addNode(self, newNode):
         tail = self.traverseList()
         tail.setNext(newNode)
 
-    def addValue(self, value):
+    def addTail(self, value):
         tempNode = node.Node(value, None)
-        self.addNode(tempNode)
+        self.__addNode(tempNode)

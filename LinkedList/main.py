@@ -3,8 +3,8 @@ import Node as n
 
 head = n.Node(10, None)
 llist = ll.LinkedList(head)
-llist.addValue(20)
+llist.addTail(20)
 llist.printTraverseList()
-llist.addValue(30)
-llist.addValue(20)
+llist.addTail(30)
+llist.addTail(20)
 llist.printTraverseList()

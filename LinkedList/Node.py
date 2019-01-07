@@ -5,17 +5,17 @@
 
 class Node:
     def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
+        self.__data = data
+        self.__next = next
 
     def getData(self):
-        return self.data
+        return self.__data
 
     def getNext(self):
-        return self.next
+        return self.__next
 
     def setData(self, data):
-        self.data = data
+        self.__data = data
 
     def setNext(self, next=None):
-        self.next = next
+        self.__next = next
