@@ -4,4 +4,5 @@
 
 
 class LinkedList:
-    head = None
+    def __init__(self, head=None):
+        self.head = head
