@@ -7,6 +7,7 @@ import Node as node
 
 class LinkedList:
     def __init__(self, head=None):
+        # Should be changed to take an array for initialization
         self.__head = head
 
     def getHead(self):
