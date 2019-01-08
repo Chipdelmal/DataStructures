@@ -1,3 +1,3 @@
 
-from LinkedList import LinkedList
-from Node import Node
+from class_LinkedList import LinkedList
+from class_Node import Node

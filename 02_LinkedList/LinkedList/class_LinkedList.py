@@ -5,7 +5,7 @@
 import Node as node
 
 
-class LinkedList:
+class LinkedList(object):
     def __init__(self, values=[None]):
         self.__head = node.Node(values[0], None)
         for i in range(1, len(values)):
