@@ -6,9 +6,10 @@ import Node as node
 
 
 class LinkedList:
-    def __init__(self, head=None):
-        # Should be changed to take an array for initialization
-        self.__head = head
+    def __init__(self, values=[None]):
+        self.__head = node.Node(values[0], None)
+        for i in range(1, len(values)):
+            self.addTail(values[i])
 
     def getHead(self):
         return self.__head
