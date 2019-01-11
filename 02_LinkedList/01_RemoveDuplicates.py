@@ -6,27 +6,19 @@ class LinkedList_RemoveDuplicates(LinkedList):
         super(LinkedList_RemoveDuplicates, self).__init__(values)
 
     def removeDuplicatesHash(self):
-        if self.head is None:
+        if (self.head is None):
             # Linked list is empty
             return None
         else:
             # Prime the list with the head, and the set with present values
             currentNode = self.head
             valuesPresent = {currentNode.data}
-            # Iterate the list changing the pointers if values are present
-            while currentNode.next is not None:
+            nextNode = currentNode.next
+            while nextNode is not None:
+                currentNode = nextNode
                 nextNode = currentNode.next
-                print("c: ", currentNode.data, "::", "n: ", nextNode.data)
-                if nextNode.data in valuesPresent:
-                    print("present: ", nextNode.data)
-                    # Would need to destruct next here if it was C++
-                    while nextNode.data in valuesPresent:
-                        currentNode.next = nextNode.next
-                        currentNode = currentNode.next
-                else:
-                    valuesPresent.add(nextNode.data)
-                    currentNode = currentNode.next
-
+                valuesPresent.add(currentNode.data)
+            return valuesPresent
     def removeDuplicatesNoBuffer():
         return 1
 
