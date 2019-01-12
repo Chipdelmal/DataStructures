@@ -1,5 +1,5 @@
 ##############################################################################
-# 01: Is Unique? Exercise
+# 01: Is Unique?
 ##############################################################################
 
 def isUnique_Set(inputString):
@@ -37,8 +37,16 @@ def isUnique_NoStructs(inputString):
     return(allUnique)
 
 
-inputString = "abcdbexyz"
-uniqueA = isUnique_Set(inputString)
-uniqueB = isUnique_NoStructs(inputString)
-
-print([uniqueA, uniqueB])
+##############################################################################
+# Test and Debug
+##############################################################################
+if __name__ == '__main__':
+    inputString = "abcdezxy"
+    uniqueA = isUnique_Set(inputString)
+    uniqueB = isUnique_NoStructs(inputString)
+    print(
+        "Sets: " + str(uniqueA) + "\n" +
+        "NoStruct: " + str(uniqueB) + "\n" +
+        "\n"
+        "Match: " + str(uniqueA == uniqueB)
+    )
