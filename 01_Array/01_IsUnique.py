@@ -1,6 +1,8 @@
 ##############################################################################
 # 01: Is Unique?
+#   Extensions: Case insensitive, spaces
 ##############################################################################
+
 
 def isUnique_Set(inputString):
     '''
@@ -45,8 +47,8 @@ if __name__ == '__main__':
     uniqueA = isUnique_Set(inputString)
     uniqueB = isUnique_NoStructs(inputString)
     print(
-        "Sets: " + str(uniqueA) + "\n" +
-        "NoStruct: " + str(uniqueB) + "\n" +
-        "\n"
+        "Sets: " + str(uniqueA) + "\n"
+        + "NoStruct: " + str(uniqueB) + "\n"
+        + "\n"
         "Match: " + str(uniqueA == uniqueB)
     )
