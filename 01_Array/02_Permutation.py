@@ -3,18 +3,8 @@
 #   Extensions: Case insensitive, spaces
 ##############################################################################
 
+isUnique = __import__("01_IsUnique")
 
-def caseAndSpaceTreat(inputString, caseSensitive=True, spaces=True):
-    '''
-    Returns a lowercase string if case insensitive, and removes spaces
-        if necessary
-    '''
-    # String pre-treatment
-    if caseSensitive == False:
-        inputString = inputString.lower()
-    if spaces == False:
-        inputString = inputString.replace(" ", "")
-    return inputString
 
 def permutation_Sort(inStringA, inStringB, caseSensitive=True, spaces=True):
     '''
@@ -22,8 +12,8 @@ def permutation_Sort(inStringA, inStringB, caseSensitive=True, spaces=True):
     This function works by sorting the two strings, and then comparing them
         to check if the resulting structure is the same.
     '''
-    inStringA = caseAndSpaceTreat(inStringA,caseSensitive,spaces)
-    inStringB = caseAndSpaceTreat(inStringB,caseSensitive,spaces)
+    inStringA = isUnique.caseAndSpaceTreat(inStringA,caseSensitive,spaces)
+    inStringB = isUnique.caseAndSpaceTreat(inStringB,caseSensitive,spaces)
     sortedA = sorted(inStringA)
     sortedB = sorted(inStringB)
     return (sortedA == sortedB)
@@ -46,8 +36,8 @@ def permutation_Count(inStringA, inStringB, caseSensitive=True, spaces=True):
         a character repeats itself in each of them (uses an auxiliary
         "countCharacters" function).
     '''
-    inStringA = caseAndSpaceTreat(inStringA,caseSensitive,spaces)
-    inStringB = caseAndSpaceTreat(inStringB,caseSensitive,spaces)
+    inStringA = isUnique.caseAndSpaceTreat(inStringA,caseSensitive,spaces)
+    inStringB = isUnique.caseAndSpaceTreat(inStringB,caseSensitive,spaces)
     countA = countCharacters(inStringA)
     countB = countCharacters(inStringB)
     return (countA == countB)
