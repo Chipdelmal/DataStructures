@@ -7,7 +7,7 @@
 def urlify(inputString, spaceReplacement="%20"):
     '''
     Returns the string with the spaces replaced by the "spaceReplacement"
-        parameter.
+        parameter. This solution uses an additional structure (not in place).
     '''
     replaceLength = len(spaceReplacement)
     inputLength = len(inputString)
