@@ -7,6 +7,7 @@
 def countOdds(frequenciesList):
     '''
     Returns the number of odd counts in a list of frequencies.
+        Auxiliary function.
     '''
     oddCount = 0
     for val in frequenciesList:
@@ -18,6 +19,7 @@ def countOdds(frequenciesList):
 def characterCounts(inputString):
     '''
     Returns a dictionary with the characters frequencies in a string.
+        Auxiliary function.
     '''
     dict = {}
     for char in set(inputString):
@@ -27,7 +29,8 @@ def characterCounts(inputString):
 
 def treatString(inputString):
     '''
-    Returns a string ready to be tested for palindrome
+    Returns a string ready to be tested for palindrome.
+        Auxiliary function.
     '''
     removedSpace = inputString.replace(" ", "")
     lowerCase = removedSpace.lower()
@@ -55,10 +58,30 @@ def naiveIsPalindromePermutation(inputString):
     return isPalindrome
 
 
+def isPalindromePermutation(inputString):
+    '''
+    Checks if the input string is a permutation of a palindrome.
+        This is a better version as it breaks from the cycle if the conditions
+        for a palindrome are not met.
+    '''
+    treatedString = treatString(inputString)
+    isEvenLength = len(treatedString) % 2 == 0
 
+    isPalindrome = True
+    oddCount = 0
+    for char in treatedString:
+        count = treatedString.count(char)
+        if count % 2 != 0:
+            oddCount = oddCount + 1
+        # Check if the palindrome conditions still hold.
+        if isEvenLength and oddCount > 0:
+            isPalindrome = False
+            break
+        if not(isEvenLength) and oddCount > 1:
+            isPalindrome = False
+            break
 
-
-
+    return isPalindrome
 
 
 ##############################################################################
@@ -67,3 +90,4 @@ def naiveIsPalindromePermutation(inputString):
 if __name__ == '__main__':
     inputString = "Taco cat"
     print(naiveIsPalindromePermutation(inputString))
+    print(isPalindromePermutation(inputString))
