@@ -21,7 +21,7 @@ class LinkedList_KToLast(LinkedList):
             else:
                 runner = runner.next
             counter = counter + 1
-        #
+        # Move both probes until the runner hits the end
         while (runner is not None):
             current = current.next
             runner = runner.next
