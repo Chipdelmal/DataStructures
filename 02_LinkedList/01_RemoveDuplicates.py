@@ -28,8 +28,11 @@ class LinkedList_RemoveDuplicates(LinkedList):
     def removeDuplicatesNoBuffer():
         return 1
 
-
-llist2 = LinkedList_RemoveDuplicates([2, 3, 4, 3, 3, 1])
-#llist2.printTraverseList()
-llist2.removeDuplicatesHash()
-llist2.printTraverseList()
+##############################################################################
+# Test and Debug
+##############################################################################
+if __name__ == '__main__':
+    llist2 = LinkedList_RemoveDuplicates([2, 3, 4, 3, 3, 1])
+    llist2.printTraverseList()
+    llist2.removeDuplicatesHash()
+    llist2.printTraverseList()
