@@ -22,5 +22,5 @@ def partition(linkedList, threshold):
 ##############################################################################
 if __name__ == '__main__':
     llist = LinkedList([2, 3, 4, 5, 10, 11, 3, 3, 1])
-    partitioned = partition(llist,5)
+    partitioned = partition(llist, 5)
     partitioned.printTraverseList()
