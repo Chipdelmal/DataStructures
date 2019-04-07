@@ -1,30 +1,34 @@
 ##############################################################################
 # 03: URLify
+#   Extensions:
 ##############################################################################
 
 
-def urlify_Obvious(inString):
-    return inString.replace(" ", "%20")
+def urlify(inputString, spaceReplacement="%20"):
+    '''
+    Returns the string with the spaces replaced by the "spaceReplacement"
+        parameter. This solution uses an additional structure (not in place).
+    '''
+    replaceLength = len(spaceReplacement)
+    inputLength = len(inputString)
+    spacesCount = inputString.count(" ")
+
+    tempArray = [None] * (inputLength + (replaceLength - 1) * spacesCount)
+
+    j = 0
+    for i, char in enumerate(inputString):
+        if char is " ":
+            for replace in spaceReplacement:
+                tempArray[j] = replace
+                j = j + 1
+        else:
+            tempArray[j] = char
+            j = j + 1
+    return tempArray
 
 
-testString = "Testing this solution"
-urlify_Obvious(testString)
-
-inString = testString
-
-replaceString = "%20"
-stringLength = len(inString)
-spacesCount = inString.count(" ")
-urlArray = [None] * (3 * spacesCount + stringLength)
-arrayIndex = stringLength
-for i in range(0, stringLength-1):
-    character = inString[i]
-    if character is not " ":
-        urlArray[arrayIndex] = character
-        arrayIndex = arrayIndex - 1
-    else:
-        for j in range(0, len(replaceString)):
-            urlArray[arrayIndex] = replaceString[j]
-            arrayIndex = arrayIndex - 1
-urlArray
-range(stringLength, 1, )
+##############################################################################
+# Test and Debug
+##############################################################################
+if __name__ == '__main__':
+    urlified = urlify("This is not a test", spaceReplacement="%20")
