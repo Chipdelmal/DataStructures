@@ -52,8 +52,9 @@ def sumLinkedLists(llA, llB, base=10):
 ##############################################################################
 # Test and Debug
 ##############################################################################
-llA = LinkedList([3, 1, 2])
-llB = LinkedList([1, 9, 5, 8])
+if __name__ == '__main__':
+    llA = LinkedList([3, 1, 2])
+    llB = LinkedList([1, 9, 5, 8])
 
-llC = sumLinkedLists(llA, llB)
-llC.printTraverseList()
+    llC = sumLinkedLists(llA, llB)
+    llC.printTraverseList()
