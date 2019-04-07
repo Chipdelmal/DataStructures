@@ -72,16 +72,19 @@ def shortest_path(graph, start, goal):
     except StopIteration:
         return None
 
+
 ##############################################################################
 # Test and Debug
 ##############################################################################
 if __name__ == '__main__':
-    graph = {'A': set(['B', 'C']),
-             'B': set(['A', 'D', 'E']),
-             'C': set(['A', 'F']),
-             'D': set(['B']),
-             'E': set(['B', 'F']),
-             'F': set(['C', 'E'])}
+    graph = {
+        'A': set(['B', 'C']),
+        'B': set(['A', 'D', 'E']),
+        'C': set(['A', 'F']),
+        'D': set(['B']),
+        'E': set(['B', 'F']),
+        'F': set(['C', 'E'])
+    }
 
     dfsRecursive(graph, 'A')
     dfsIterative(graph, 'B')
