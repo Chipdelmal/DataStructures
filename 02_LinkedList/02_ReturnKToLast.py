@@ -6,18 +6,17 @@ class LinkedList_KToLast(LinkedList):
         super(LinkedList_KToLast, self).__init__(values)
 
     def returnKToLast(self, k):
-        if (self.head is None):
+        if (self.head is None) or (k < 0):
             # Linked list is empty
             return None
-
         runner = self.head
         current = self.head
 
         # Advance runner until it hits 'k' distance or runs out of the list
-        counter = 0
-        while (counter < k):
-            if runner.next is None:
-                return None
+        counter = 1
+        while (counter <= k + 1):
+            if runner is None:
+                return self.head
             else:
                 runner = runner.next
             counter = counter + 1
@@ -33,5 +32,5 @@ class LinkedList_KToLast(LinkedList):
 ##############################################################################
 if __name__ == '__main__':
     llist = LinkedList_KToLast([2, 3, 4, 3, 3, 1])
-    node = llist.returnKToLast(5)
+    node = llist.returnKToLast(0)
     print(node.data)
