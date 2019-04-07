@@ -1,4 +1,5 @@
 from LinkedList import LinkedList
+from LinkedList import Node
 
 
 class LinkedList_KToLast(LinkedList):
@@ -8,7 +9,7 @@ class LinkedList_KToLast(LinkedList):
     def returnKToLast(self, k):
         if (self.head is None) or (k < 0):
             # Linked list is empty
-            return None
+            return Node("Linst is Empty or Index is Negative")
         runner = self.head
         current = self.head
 
@@ -16,7 +17,7 @@ class LinkedList_KToLast(LinkedList):
         counter = 1
         while (counter <= k + 1):
             if runner is None:
-                return self.head
+                return Node("Index is out of range")
             else:
                 runner = runner.next
             counter = counter + 1
@@ -32,5 +33,5 @@ class LinkedList_KToLast(LinkedList):
 ##############################################################################
 if __name__ == '__main__':
     llist = LinkedList_KToLast([2, 3, 4, 3, 3, 1])
-    node = llist.returnKToLast(0)
+    node = llist.returnKToLast(10)
     print(node.data)
