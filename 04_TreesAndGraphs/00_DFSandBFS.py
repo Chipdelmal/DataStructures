@@ -16,13 +16,13 @@ def dfsRecursive(graph, start, visited=None):
 
 
 def dfsIterative(graph, start, visited=None):
-    # Needs edge cases checks
     visited, stack = set(), [start]
     while stack:
         vertex = stack.pop()
         if vertex not in visited:
             visited.add(vertex)
-            stack.extend(graph[vertex] - visited)
+            neighbors = graph[vertex]
+            stack.extend(neighbors - visited)
     return visited
 
 
@@ -38,6 +38,7 @@ def dfsIterativePaths(graph, start, end):
             else:
                 stack.append((next, path + [next]))
 
+
 ###############################################################################
 # Breadth first (queue)
 # https://eddmann.com/posts/
@@ -48,10 +49,11 @@ def dfsIterativePaths(graph, start, end):
 def bfsIterative(graph, start):
     visited, queue = set(), [start]
     while queue:
-        vertex = queue.pop(0)
-        if vertex not in visited:
-            visited.add(vertex)
-            queue.extend(graph[vertex] - visited)
+        probe = queue.pop(0)
+        if probe not in visited:
+            visited.add(probe)
+            neighbors = graph[probe]
+            queue.extend(neighbors-visited)
     return visited
 
 
@@ -88,4 +90,5 @@ if __name__ == '__main__':
 
     dfsRecursive(graph, 'A')
     dfsIterative(graph, 'B')
+    bfsIterative(graph, 'A')
     shortest_path(graph, 'A', 'E')
