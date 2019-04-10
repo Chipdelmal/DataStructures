@@ -61,7 +61,8 @@ def bfsIterativePaths(graph, start, end):
     queue = [(start, [start])]
     while queue:
         (vertex, path) = queue.pop(0)
-        for next in graph[vertex] - set(path):
+        visited = set(path)
+        for next in graph[vertex] - visited:
             if next == end:
                 yield path + [next]
             else:
@@ -80,12 +81,12 @@ def shortest_path(graph, start, goal):
 ##############################################################################
 if __name__ == '__main__':
     graph = {
-        'A': set(['B', 'C']),
-        'B': set(['A', 'D', 'E']),
-        'C': set(['A', 'F']),
-        'D': set(['B']),
-        'E': set(['B', 'F']),
-        'F': set(['C', 'E'])
+        'A': {'B', 'C'},
+        'B': {'A', 'D', 'E'},
+        'C': {'A', 'F'},
+        'D': {'B'},
+        'E': {'B', 'F'},
+        'F': {'C', 'E'}
     }
 
     dfsRecursive(graph, 'A')
