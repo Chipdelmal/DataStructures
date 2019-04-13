@@ -5,7 +5,7 @@
 * Stacks can be implemented with a linked list, if operations only take place on one end.
 * Queues can be implemented with a linked list, if additions take place on one end, and removals on the other.
 
-# Exercises: Trees and Graphs
+# Exercises: Stacks and Queues
 
 1. **Three in One**: Describe how you could use a single array to implement three stacks.
 2. **Stack Min**: How would you design a stack which, in addition to push and pop, has a function min which returns the minimum element? Push, pop and min should all operate in 0(1) time.

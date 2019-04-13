@@ -26,3 +26,8 @@
 9. **String Rotation**: Assume you have a method isSubstringwhich checks if one word is a substring of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
 
 *McDowell, Gayle Laakmann (2015). Cracking the coding interview: 150 programming questions and solutions. Palo Alto, CA: CareerCup, LLC*
+
+
+1. **Merge Sorted Arrays**: Given two sorted arrays, denoted as array1 and array2, please merge them into array1 and keep the merged array sorted. Suppose there is sufficient vacant memory at the end of array1 to accommodate elements of array2.
+
+*He, Harry. Coding Interviews Questions, Analysis & Sollutions. Apress, 2002.*
