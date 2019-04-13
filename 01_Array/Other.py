@@ -27,6 +27,21 @@ def sockMerchant(n, ar):
     return total
 
 
+# countingValleys #############################################################
+def countingValleys(n, s):
+    steps = list(map(int, s.replace("U", " 1").replace("D", " -1").split()))
+    zeroCross = 0
+    curHeight = 0
+
+    for i in range(len(steps)):
+        preHeight = curHeight
+        curHeight = preHeight + steps[i]
+        if (preHeight == 0) and (curHeight < 0):
+            zeroCross = zeroCross + 1
+
+    return zeroCross
+
+
 ##############################################################################
 # Test and Debug
 ##############################################################################
@@ -37,3 +52,6 @@ if __name__ == '__main__':
 
     input = [10, 10, 10, 20, 20, 30, 50]
     print(sockMerchant(len(input), input))
+
+    s = "UDDDUUUUDDDU"
+    print(countingValleys(len(s),s))
