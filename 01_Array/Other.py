@@ -1,11 +1,5 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
-
 
 # Rotate Left #################################################################
 def rotLeft(a, d):
@@ -97,6 +91,42 @@ def StrongPassword(password):
                 counts = counts + 1
         return len(sets) - counts
 
+
+# Alternating ################################################################
+def getPairCombinations(stringIn):
+    unique = list(set(stringIn))
+    combinations = [None] * len(unique) ** 2
+    # combinations = list(itertools.combinations(unique, 2))
+    uLength = len(unique)
+    for i in range(uLength):
+        for j in range(uLength):
+            combinations[uLength * i + j] = [unique[i], unique[j]]
+    return combinations
+
+
+def isAlternating(s):
+    unique = list(set(s))
+    if (len(unique) > 2):
+        return 0
+    for i in range(len(s) - 1):
+        if s[i] == s[i+1]:
+            return 0
+    return len(s)
+
+
+def alternate(s):
+    if (len(s) <= 1):
+        return 0
+    combinations = getPairCombinations(s)
+    max = 0
+    for pair in combinations:
+        copyString = ''.join([c for c in s if c in pair])
+        altLength = isAlternating(copyString)
+        if (altLength > max):
+            max = altLength
+    return max
+
+
 ##############################################################################
 # Test and Debug
 ##############################################################################
@@ -116,4 +146,8 @@ if __name__ == '__main__':
     repeatedString(s, n)
 
 
-password = "Ab1"
+
+
+
+s = "asdcbsdcagfsdbgdfanfghbsfdab"
+alternate(s)
