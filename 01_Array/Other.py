@@ -51,6 +51,51 @@ def repeatedString(s, n):
     return total
 
 
+# Repeated String #############################################################
+def compareTriplets(a, b):
+    totals = [0] * 2
+    for i in range(len(a)):
+        if (a[i] > b[i]):
+            totals[0] = totals[0] + 1
+        elif (a[i] < b[i]):
+            totals[1] = totals[1] + 1
+    return totals
+
+
+# CamelCase ##################################################################
+def countUpper(s):
+    count = 0
+    for i in range(len(s)):
+        if(s[i].isupper()):
+            count = count + 1
+    return count
+
+
+def camelcase(s):
+    return countUpper(s) + 1
+
+
+# StrongPassword #############################################################
+def StrongPassword(password):
+    minLength = 6
+    pLength = len(password)
+    if(pLength < minLength):
+        return minLength - pLength
+    else:
+        pLength = len(password)
+        passSet = set(password)
+        numbers = set("0123456789")
+        lower_case = set("abcdefghijklmnopqrstuvwxyz")
+        upper_case = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        special_characters = set("!@#$%^&*()-+")
+
+        sets = (numbers, lower_case, upper_case, special_characters)
+        counts = 0
+        for i in sets:
+            intersectionCount = len(passSet.intersection(i))
+            if(intersectionCount > 0):
+                counts = counts + 1
+        return len(sets) - counts
 
 ##############################################################################
 # Test and Debug
@@ -64,9 +109,11 @@ if __name__ == '__main__':
     sockMerchant(len(input), input)
 
     s = "UDDDUUUUDDDU"
-    countingValleys(len(s),s)
-
+    countingValleys(len(s), s)
 
     s = "aba"
     n = 10
-    repeatedString(s,n)
+    repeatedString(s, n)
+
+
+password = "Ab1"
