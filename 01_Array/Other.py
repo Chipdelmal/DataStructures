@@ -1,5 +1,13 @@
 #!/bin/python3
 
+from collections import Counter
+
+
+magazine = Counter("two times three is not four".split())
+note = Counter("two times two is four".split())
+
+ransomNote(magazine, note)
+    return Counter(note) - Counter(magazine) == {}
 
 # Rotate Left #################################################################
 def rotLeft(a, d):
@@ -127,6 +135,20 @@ def alternate(s):
     return max
 
 
+# Ransom Note ################################################################
+def checkMagazine(magazine, note):
+    notS = set(note)
+    notL = list(note)
+    magL = list(magazine)
+
+    for word in notS:
+        if(magL.count(word) < notL.count(word)):
+            print("No")
+            return False
+    print("Yes")
+    return True
+
+
 ##############################################################################
 # Test and Debug
 ##############################################################################
@@ -145,9 +167,5 @@ if __name__ == '__main__':
     n = 10
     repeatedString(s, n)
 
-
-
-
-
-s = "asdcbsdcagfsdbgdfanfghbsfdab"
-alternate(s)
+    s = "asdcbsdcagfsdbgdfanfghbsfdab"
+    alternate(s)

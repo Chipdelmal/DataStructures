@@ -30,4 +30,4 @@
 
 1. **Merge Sorted Arrays**: Given two sorted arrays, denoted as array1 and array2, please merge them into array1 and keep the merged array sorted. Suppose there is sufficient vacant memory at the end of array1 to accommodate elements of array2.
 
-*He, Harry. Coding Interviews Questions, Analysis & Sollutions. Apress, 2002.*
+*He, Harry. Coding Interviews Questions, Analysis & Solutions. Apress, 2002.*
